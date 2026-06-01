@@ -1,0 +1,6 @@
+bash: winget: command not found
+---
+bash: wsl: command not found
+---
+bash: mysql: command not found
+---DONE---

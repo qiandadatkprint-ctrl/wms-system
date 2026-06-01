@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: wms-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: wms_root_2024
+      MYSQL_DATABASE: wms_db
+      TZ: Asia/Shanghai
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_data:/var/lib/mysql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+  server:
+    build: ./wms-server
+    container_name: wms-server
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: wms_root_2024
+      DB_NAME: wms_db
+      JWT_SECRET: wms_jwt_secret_key_2024
+      TZ: Asia/Shanghai
+    depends_on:
+      - mysql
+
+  client:
+    build: ./wms-client
+    container_name: wms-client
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - server
+
+volumes:
+  mysql_data:

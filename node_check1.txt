@@ -1,0 +1,30 @@
+corepack  334B
+corepack.cmd  218B
+install_tools.bat  3.0K
+node.exe  88.0M
+nodevars.bat  702B
+npm  2.0K
+npm.cmd  538B
+npm.ps1  1.7K
+npx  2.0K
+npx.cmd  538B
+npx.ps1  1.7K
+
+11 files, 0 dirs (3 .cmd, 3 no ext, 2 .ps1, 2 .bat, 1 .exe)
+corepack  334B
+corepack.cmd  218B
+install_tools.bat  3.0K
+node.exe  88.0M
+nodevars.bat  702B
+npm  2.0K
+npm.cmd  538B
+npm.ps1  1.7K
+npx  2.0K
+npx.cmd  538B
+npx.ps1  1.7K
+
+11 files, 0 dirs (3 no ext, 3 .cmd, 2 .ps1, 2 .bat, 1 .exe)
+---
+C:\Program Files\nodejs\node.exe
+---
+v24.16.0

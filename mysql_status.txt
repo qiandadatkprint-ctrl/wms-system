@@ -1,0 +1,1 @@
+MYSQL_ERR:Command failed: mysql --version 2>&1 || where mysql 2>&1 || dir "C:Program FilesMySQL" 2>&1 || dir "C:MySQL" 2>&1

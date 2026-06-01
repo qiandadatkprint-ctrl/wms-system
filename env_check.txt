@@ -1,0 +1,3 @@
+SHELL=/usr/bin/bash
+bash: rtk: command not found
+no /usr/bin

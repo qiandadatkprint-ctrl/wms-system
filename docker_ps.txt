@@ -1,0 +1,8 @@
+rtk: Failed to resolve 'docker' via PATH, falling back to direct exec: Binary 'docker' not found on PATH
+rtk: Failed to resolve 'docker' via PATH, falling back to direct exec: Binary 'docker' not found on PATH
+Error: Failed to run docker ps
+
+Caused by:
+    program not found
+bash: docker-compose: command not found
+DONE
