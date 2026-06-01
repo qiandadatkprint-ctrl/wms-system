@@ -45,17 +45,17 @@
         <el-col :span="12"><el-form-item label="品名"><el-input v-model="form.name" /></el-form-item></el-col>
       </el-row>
       <el-row :gutter="12">
-        <el-col :span="12"><el-form-item label="条码"><el-input v-model="form.barcode" /></el-form-item></el-col>
-        <el-col :span="12"><el-form-item label="分类"><el-input v-model="form.category" /></el-form-item></el-col>
+        <el-col :span="12"><el-form-item label="条码"><el-input v-model="form.barcode" placeholder="扫码枪或手动输入" /></el-form-item></el-col>
+        <el-col :span="12"><el-form-item label="分类"><el-select v-model="form.category" placeholder="选择分类" style="width:100%" clearable><el-option v-for="c in categoryOptions" :key="c" :label="c" :value="c" /></el-select></el-form-item></el-col>
       </el-row>
       <el-row :gutter="12">
-        <el-col :span="12"><el-form-item label="规格"><el-input v-model="form.spec" /></el-form-item></el-col>
-        <el-col :span="12"><el-form-item label="单位"><el-input v-model="form.unit" /></el-form-item></el-col>
+        <el-col :span="12"><el-form-item label="规格"><el-input v-model="form.spec" placeholder="例如：Φ50×3mm×6m" /></el-form-item></el-col>
+        <el-col :span="12"><el-form-item label="单位"><el-select v-model="form.unit" placeholder="选择单位" style="width:100%"><el-option v-for="u in unitOptions" :key="u" :label="u" :value="u" /></el-select></el-form-item></el-col>
       </el-row>
       <el-row :gutter="12">
-        <el-col :span="8"><el-form-item label="安全库存"><el-input-number v-model="form.safety_stock" :min="0" /></el-form-item></el-col>
-        <el-col :span="8"><el-form-item label="最大库存"><el-input-number v-model="form.max_stock" :min="0" /></el-form-item></el-col>
-        <el-col :span="8"><el-form-item label="参考单价"><el-input-number v-model="form.retail_price" :min="0" :precision="2" /></el-form-item></el-col>
+        <el-col :span="8"><el-form-item label="安全库存"><el-input-number v-model="form.safety_stock" :min="0" placeholder="低于此值预警" /></el-form-item></el-col>
+        <el-col :span="8"><el-form-item label="最大库存"><el-input-number v-model="form.max_stock" :min="0" placeholder="高于此值预警" /></el-form-item></el-col>
+        <el-col :span="8"><el-form-item label="参考单价(元)"><el-input-number v-model="form.retail_price" :min="0" :precision="2" /></el-form-item></el-col>
       </el-row>
     </el-form>
     <template #footer><el-button @click="dialogVisible=false">取消</el-button><el-button type="primary" @click="save">保存</el-button></template>
@@ -75,6 +75,8 @@ const page = ref(1)
 const total = ref(0)
 const pageSize = ref(20)
 const searchKeyword = ref('')
+const categoryOptions = ['原材料', '半成品', '成品', '包装材料', '办公用品', '工具配件', '其他']
+const unitOptions = ['个', '箱', '包', 'kg', '吨', '米', '升', '根', '台', '套', '卷', '双', '桶', '张', '支', '件', '盒']
 
 const dialogVisible = ref(false)
 const editing = ref(false)
