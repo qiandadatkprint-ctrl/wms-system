@@ -2,7 +2,7 @@ import axios from 'axios'
 import router from '../router'
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: location.hostname === 'localhost' ? '/api' : 'https://wms-backend-uanj.onrender.com/api',
   timeout: 15000,
 })
 
