@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+*.log
+startup.log
+backend.log
+frontend.log
+check_result.txt
+diagnose_result.txt
+health_result.txt
+mysql_status.txt
+status.txt
+status_test.txt
+test_output.txt
+*.tar.gz
