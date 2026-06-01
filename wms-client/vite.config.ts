@@ -12,6 +12,7 @@ export default defineConfig({
       },
     },
   },
+  base: '/wms-system/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
